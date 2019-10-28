@@ -7,12 +7,10 @@ struct ModalDimmingView : View {
     var body: some View {
         Color
             .black
-            .relativeWidth(1.0)
-            .relativeHeight(1.0)
             .opacity(0.3)
             .edgesIgnoringSafeArea([.bottom, .top])
             .transition(.opacity)
-            .tapAction {
+            .onTapGesture {
                 self.store.dispatch(event: .cancelCreatingItem)
             }
     }
